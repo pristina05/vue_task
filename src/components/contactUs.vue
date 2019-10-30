@@ -1,6 +1,6 @@
 <template>
   <div class="contactUs">
-    <div class=" mt-5">
+    <div class="mt-5">
       <div class="row">
         <div class="form-section col-md-6 bg-lightgrey ">
           <div class="container">
@@ -51,7 +51,7 @@
           </div>
         </div>
         <!-- image section -->
-        <div class="col-lg-6 image">
+        <div class="col-md-6 image">
           <p class="white box border mx-auto">
             <b class="display-4 mx-auto"
               >Tell us what u need so you can meet your virtual assistant</b
@@ -64,30 +64,39 @@
 </template>
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-
-.form-section {
-  padding: 30px 61px;
-}
-
-.image {
-  background-image: url("../assets/images/img3.jpeg");
-  // background-repeat: no-repeat;
-  background-size: 80vh;
-}
-.box {
-  width: 365px;
-  margin: 7rem;
-}
-.btn {
-  padding: 6px 22px 5px 22px;
-}
-@media screen and (max-width: 800px) {
-  .image {
-    background-size: cover;
-    padding: 0px;
+.contactUs {
+  .row {
+    margin: 0px;
   }
   .form-section {
-    padding: 0px;
+    padding: 30px 61px;
+  }
+
+  .image {
+    background-image: url("../assets/images/img3.jpeg");
+    // background-repeat: no-repeat;
+    background-size: 80vh;
+  }
+  .box {
+    width: 365px;
+    margin: 7rem;
+  }
+  .btn {
+    padding: 6px 22px 5px 22px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .contactUs {
+    .image {
+      background-size: cover;
+      padding: 0px;
+    }
+    .form-section {
+      padding: 0px;
+    }
+    .box {
+      width: 308px;
+    }
   }
 }
 </style>

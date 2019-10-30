@@ -1,5 +1,5 @@
 <template>
-  <div class="card-section">
+  <div class="cardSection">
     <div class="container p-5">
       <div class="row">
         <div class="col-md-4" v-for="team in teams" v-bind:key="team">
@@ -64,24 +64,24 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-.card-section {
-}
-.image {
-  width: 290px;
-  height: 300px;
-}
-.img-section {
-  position: relative;
-  width: 400px;
-  height: 200px;
-}
+.cardSection {
+  .image {
+    width: 290px;
+    height: 300px;
+  }
+  .img-section {
+    position: relative;
+    width: 400px;
+    height: 200px;
+  }
 
-.content-section {
-  position: absolute;
-  top: 247px;
-  right: 152px;
-  width: 215px;
-  height: 120px;
-  border: 3px solid #73ad21;
+  .content-section {
+    position: absolute;
+    top: 247px;
+    right: 152px;
+    width: 215px;
+    height: 120px;
+    border: 3px solid #73ad21;
+  }
 }
 </style>

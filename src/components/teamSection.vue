@@ -1,8 +1,10 @@
 <template>
+  <div class="teamSection">
   <div class="container">
-    <div class="text-center main-title mt-3"><b>Our Team </b></div>
+    <div class="team text-center main-title mt-3"><b>Our Team </b></div>
     <cardSection />
     <listSection />
+  </div>
   </div>
 </template>
 <script>
@@ -15,3 +17,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.team {
+  font-size: 30px;
+}
+</style>

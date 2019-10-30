@@ -1,6 +1,6 @@
 <template>
   <div class="listSection">
-    <div class="container mt-5 p-5">
+    <div class="container mt-5 ">
       <div class="row">
         <!-- list group -->
         <div class="col-md-2 col-xs-12">
@@ -41,14 +41,17 @@
 @import "@/assets/scss/main.scss";
 
 .listSection {
-  padding-top: 60px;
+  padding-top: 106px;
   .list:hover {
     background-color: $swiper-color;
   }
 }
 @media screen and (min-width: 800px) {
-  .list-content {
-    padding: 12px 40px;
+  .listSection {
+    padding: 119px 0px 0px 37px;
+    .list-content {
+      padding: 12px 40px;
+    }
   }
 }
 </style>

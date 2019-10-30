@@ -4,7 +4,7 @@
       <div class="footer-img">
         <div class="row">
           <!-- logo -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-xs-12">
             <div class="logo-section">
               <img src="@/assets/company-logo.png" alt="logo" />
               PoliticsM4
@@ -13,7 +13,7 @@
           <!-- contact us -->
           <div class="col-md-4 mt-5">
             <div>
-              <p class="title white ml-3">Contact US</p>
+              <p class="title white">Contact US</p>
               <div v-for="list in lists" v-bind:key="list">
                 <div class="icon d-flex mt-3">
                   <div class="icons green">
@@ -28,7 +28,7 @@
             </div>
           </div>
           <!-- links -->
-          <div class="col-md-4 mt-5">
+          <div class="col-md-4  mt-5">
             <p class="title white ml-3">Links</p>
             <div v-for="link in links" v-bind:key="link">
               <div class="icons d-flex col-lg-1 mt-3">
@@ -49,27 +49,32 @@
       <div class="copyright">
         <div class="row">
           <div class="col-md-4 col-xs-12 mt-3">
-            <p>
+            <p class="copyright-content">
               &copy; Copyright 2019 mobirise - Simple Html Website
             </p>
           </div>
           <div class="col-md-8 col-xs-12 mt-3">
-            <div class="row">
-              <div class="col-md-2">
-                <font-awesome-icon :icon="['fab', 'facebook']" class="fa-x" />
-                facebook
-              </div>
-              <div class="col-md-2">
-                <font-awesome-icon :icon="['fab', 'twitter']" class="fa-x" />
-                twitter
-              </div>
-              <div class="col-md-2">
-                <font-awesome-icon :icon="['fab', 'instagram']" class="fa-x" />
-                instagram
-              </div>
-              <div class="col-md-2">
-                <font-awesome-icon :icon="['fa', 'phone']" class="fa-x" />
-                youtube
+            <div class="icon-section">
+              <div class="row">
+                <div class="col-md-2">
+                  <font-awesome-icon :icon="['fab', 'facebook']" class="fa-x" />
+                  facebook
+                </div>
+                <div class="col-md-2">
+                  <font-awesome-icon :icon="['fab', 'twitter']" class="fa-x" />
+                  twitter
+                </div>
+                <div class="col-md-2">
+                  <font-awesome-icon
+                    :icon="['fab', 'instagram']"
+                    class="fa-x"
+                  />
+                  instagram
+                </div>
+                <div class="col-md-2">
+                  <font-awesome-icon :icon="['fa', 'phone']" class="fa-x" />
+                  youtube
+                </div>
               </div>
             </div>
           </div>
@@ -130,21 +135,38 @@ export default {
 @import "@/assets/scss/main.scss";
 
 .footer-section {
+  .row {
+    margin: 0px;
+  }
   .footer-img {
     background-color: $border-bottom-color;
   }
   .logo-section {
-    margin: 23px 73px;
-    padding: 5px;
+    padding-top: 5px;
+    color: $white;
+    font-size: 24px;
   }
   .copyright {
     background-color: $black;
   }
   .fa-chevron-right {
-    color: $brown;
+    color: $gold;
   }
-  @media screen and(min-width: 800px) {
+}
+@media screen and(min-width: 800px) {
+  .footer-section {
     // padding-left: 69px;
+    .copyright-content {
+      padding-left: 90px;
+    }
+    .icon-section {
+      padding-left: 108px;
+    }
+    .logo-section {
+      padding: 56px 0px 0px 146px;
+      color: $white;
+      font-size: 24px;
+    }
   }
 }
 </style>

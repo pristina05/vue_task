@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="headerSection">
     <div class="header">
       <div>
         <b-navbar toggleable="lg">

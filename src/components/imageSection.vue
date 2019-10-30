@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="imageSection">
     <div class="image">
       <img src="../assets/images/img3.jpeg" alt="" class="img-section" />
       <div class="card-section white">
@@ -34,7 +34,7 @@
   small {
     font-size: 20px;
   }
-  .page-title{
+  .page-title {
     bottom: -61px;
   }
 }
@@ -55,7 +55,35 @@
   bottom: 22px;
   right: -38px;
   width: 190px;
-
+  color: $white;
   border-bottom: 1px solid $white;
+}
+@media screen and (max-width: 800px) {
+  .image {
+    .page-title {
+      bottom: -38px;
+    }
+    .card-section {
+      position: absolute;
+      padding: 18px;
+      top: 80px;
+      background-color: transparent;
+      font-size: 31px;
+      width: 300px;
+      border: 1px solid white;
+      border-bottom: 0px;
+      left: 10px;
+    }
+    .page-title:after {
+      content: "";
+      display: block;
+      /* margin: 0 auto; */
+      position: absolute;
+      bottom: 18px;
+      right: -21px;
+      width: 190px;
+      border-bottom: 1px solid #fff;
+    }
+  }
 }
 </style>

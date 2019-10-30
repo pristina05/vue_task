@@ -1,6 +1,6 @@
 <template>
-  <div class=" p-0">
-    <div class="image ">
+  <div class="subscription p-0">
+    <div class=" image">
       <div class="row  p-5">
         <div class="col-md-6 col-xs-12 white">
           <p>Help subscription</p>
@@ -59,5 +59,8 @@
 .image {
   background-image: url("../assets/images/img5.jpeg");
   background-size: cover;
+}
+.row {
+  margin: 0px;
 }
 </style>

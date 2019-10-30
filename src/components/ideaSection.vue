@@ -68,7 +68,14 @@ export default {
     padding: 9px 49px 4px 46px;
     background-color: white;
   }
-  
-
+}
+@media screen and(max-width:800px) {
+  .ideaSection .content-section[data-v-660779e4] {
+    position: absolute;
+    top: 155px;
+    right: 48px;
+    padding: 9px 49px 4px 46px;
+    background-color: white;
+  }
 }
 </style>
