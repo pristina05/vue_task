@@ -1,0 +1,95 @@
+@import "variable";
+.pink{
+    color:$pink;
+}
+.black{
+    color:$black;
+}
+.white{
+    color: $white;
+}
+.blue{
+    color:$blue;
+}
+.bg-white{
+    background-color: $white;
+}
+.green{
+    color: $green;
+}
+.bg-grey{
+background-color: $d;
+}
+.bg-lightgrey{
+    background-color: $light-grey;
+}
+img {
+    width: 60px;
+  }
+.bg-color{
+background-color: $b;
+}
+.padd-45{
+    padding:45px;
+}
+.title, .page-title{
+    position: relative;
+    font-weight: 100;
+    
+}
+.sites-section{
+    padding: 5rem 0rem;
+}
+.title::after{
+    content:'';
+    background: $pink;
+    color: #000;
+    width:7%;
+    height: 2px;
+    position: absolute;
+    top: 26px;
+    left: 4%;
+    transform: translateX(-50%);
+
+}
+.page-title:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 6%;
+    border-style: solid;
+    border-width: thin;
+    margin-top: 6px;
+   
+    color: deeppink;
+}
+
+.content-section{
+    padding-bottom: 10px;
+  
+}
+.loreum-ipsum{
+    font-size:15px;
+}
+.image-section{
+    max-width: 100%;
+    display: block;
+    
+}
+@media screen and (max-width: 800px) {
+    .sites-section{
+        padding: 2rem 0rem;
+    }
+   .title::after{
+        content:'';
+        background: $pink;
+        width:16%;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        left: 8%;
+        transform: translateX(-50%);
+    
+    }
+   
+}
