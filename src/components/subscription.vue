@@ -2,6 +2,7 @@
   <div class="subscription p-0">
     <div class=" image">
       <div class="row  p-5">
+        <!-- subscription -->
         <div class="col-md-6 col-xs-12 white">
           <p>Help subscription</p>
           <h1 class="page-title">Donate us monthly</h1>
@@ -18,6 +19,7 @@
             <button class="btn btn-danger ">All Pricing</button>
           </div>
         </div>
+        <!-- starting section -->
         <div class="col-md-3 col-xs-12">
           <div class="card bg-white p-4">
             <p class="text-center"><b>Starting</b></p>
@@ -34,6 +36,7 @@
             </div>
           </div>
         </div>
+        <!-- basic section-->
         <div class="col-md-3 col-xs-12">
           <div class="card bg-white p-4">
             <p class="text-center"><b> Basic</b></p>
@@ -56,11 +59,21 @@
 </template>
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
-.image {
-  background-image: url("../assets/images/img5.jpeg");
-  background-size: cover;
-}
-.row {
-  margin: 0px;
+.subscription {
+  .image {
+    background-image: url("../assets/images/img5.jpeg");
+    background-size: cover;
+  }
+  .row {
+    margin: 0px;
+  }
+  ul li {
+    list-style-type: none;
+    border-bottom-style: solid;
+    border-bottom-color: $light-grey;
+    border-width: 1px;
+    padding-top: 5px;
+    color: $grey;
+  }
 }
 </style>

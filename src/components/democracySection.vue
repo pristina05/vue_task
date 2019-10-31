@@ -5,7 +5,8 @@
         <div
           class="cards col-xl-6  col-md-6"
           v-for="item in items"
-          v-bind:key="item"
+          v-bind:key="item.color"
+          v-bind:style="bgc"
         >
           <!-- <font-awesome-icon :icon="['fas', 'tv']" /> -->
           <div class="icon">
@@ -29,6 +30,8 @@
           </div>
         </div>
       </div>
+
+      <!--  -->
     </div>
   </div>
 </template>
@@ -37,11 +40,14 @@ export default {
   data: function() {
     return {
       icon: "",
+      bgc: { backgroundColor: "" },
+
       items: [
         {
           icon: ["far", "file"],
           // icon: "fas fa-tv",
           name: "Democracy",
+          color: "#297afb",
           content: "Democracy is a system of government where we live"
         },
         {
@@ -72,6 +78,18 @@ export default {
           name: "Education",
 
           content: "We are going to improve our social care in our system"
+        }
+      ],
+      colors: [
+        {
+          id: "ssmf",
+          hex: ["#297afb", "#2898fb", "#01d8fd"],
+          title: "Sleek, Sophisticated, Mature & Formal"
+        },
+        {
+          id: "hlfss",
+          hex: ["#297afb", "#2898fb", "#01d8fd"],
+          title: "Honest, Loyal, Friendly, Stable, & Strong"
         }
       ]
     };

@@ -19,14 +19,19 @@
               <img :src="cardcontent.image" class="image" alt="ceo-photos" />
             </div>
 
-            <div class="card-content mt-3">
+            <div class="card-content">
               <div class="card-title">
-                <h1 class="text-center">{{ cardcontent.title }}</h1>
+                <h1 class="text-center page-title">{{ cardcontent.title }}</h1>
               </div>
               <div class="card-text">
-                <div class="card-text text-center">{{ cardcontent.name }}</div>
+                <div class="card-text text-center pt-4">
+                  {{ cardcontent.name }}
+                </div>
+                <div class="card-text text-center pt-3">
+                  <b> {{ cardcontent.designation }} </b>
+                </div>
                 <div class="card-text text-center">
-                  {{ cardcontent.designation }}
+                  <p class="grey">{{ cardcontent.post }}</p>
                 </div>
               </div>
             </div>
@@ -58,31 +63,35 @@ export default {
       cardcontents: [
         {
           image: img1,
-          title: "What people say",
+          title: "What People Say",
           name:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
-          designation: "CEO Facebook"
+          designation: "CEO Facebook",
+          post: "Manager"
         },
         {
           image: img2,
           name:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
           title: "Mary Barra",
-          designation: "CEO & Founder"
+          designation: "CEO & Founder",
+          post: "manager"
         },
         {
           image: img3,
           name:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
           title: "Laurie Lang",
-          designation: "CEO Optima Inc"
+          designation: "CEO Optima Inc",
+          post: "manager"
         },
         {
           image: img4,
           name:
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
           title: "Tim Cook",
-          designation: "CEO & Founder"
+          designation: "CEO & Founder",
+          post: "manager"
         }
       ],
       swiperOption: {
@@ -114,9 +123,12 @@ export default {
 .image {
   width: 123px;
   border-radius: 50%;
-  height: 143px;
+  height: 131px;
   display: block;
   margin: auto;
+}
+.page-title::after {
+  left: 48%;
 }
 
 .card-content {
@@ -130,7 +142,11 @@ export default {
   right: auto;
   height: 30px;
 }
-
+.card-title {
+  h1 {
+    font-weight: bolder;
+  }
+}
 @media screen and (min-width: 800px) {
   .swiper-card-section {
     padding: 15px 237px;
@@ -139,12 +155,14 @@ export default {
   .swiper-button-next {
     right: 182px;
     left: auto;
-    height: 30px;
+    height: 20px;
+    top: 50%;
   }
   .swiper-button-prev {
     left: 180px;
     right: auto;
-    height: 30px;
+    height: 20px;
+    top: 50%;
   }
 }
 </style>

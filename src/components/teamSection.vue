@@ -1,10 +1,8 @@
 <template>
   <div class="teamSection">
-  <div class="container">
-    <div class="team text-center main-title mt-3"><b>Our Team </b></div>
+    <div class="team text-center main-title mt-5"><b>Our Team </b></div>
     <cardSection />
     <listSection />
-  </div>
   </div>
 </template>
 <script>

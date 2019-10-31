@@ -6,6 +6,7 @@
     <youthSection />
     <ideaSection />
     <socialSection />
+    <formSection/>
     <subscription />
     <cardSection />
     <teamSection />
@@ -26,6 +27,7 @@ import youthSection from "@/components/youthSection.vue";
 import ideaSection from "@/components/ideaSection.vue";
 import subscription from "@/components/subscription.vue";
 import socialSection from "@/components/socialSection.vue";
+// import formSection from "@/components/formSection.vue";
 // import cardSection from "@/components/cardSection.vue";
 import teamSection from "@/components/teamSection.vue";
 // import listSection from "@/components/listSection.vue";
@@ -43,6 +45,7 @@ export default {
     ideaSection,
     subscription,
     socialSection,
+    // formSection,
     // cardSection,
     teamSection,
     // listSection,

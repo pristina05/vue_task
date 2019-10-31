@@ -1,6 +1,6 @@
 <template>
   <div class="footer-section">
-    <div class="mt-5">
+    <div class="footer">
       <div class="footer-img">
         <div class="row">
           <!-- logo -->
@@ -11,7 +11,7 @@
             </div>
           </div>
           <!-- contact us -->
-          <div class="col-md-4 mt-5">
+          <div class="col-md-3 mt-5">
             <div>
               <p class="title white">Contact US</p>
               <div v-for="list in lists" v-bind:key="list">
@@ -21,7 +21,7 @@
                   </div>
 
                   <div class="icon-content pl-3 ">
-                    <b class="white"> {{ list.content }}</b>
+                    <b class="lightgrey"> {{ list.content }}</b>
                   </div>
                 </div>
               </div>
@@ -30,14 +30,14 @@
           <!-- links -->
           <div class="col-md-4  mt-5">
             <p class="title white ml-3">Links</p>
-            <div v-for="link in links" v-bind:key="link">
+            <div v-for="link in links" v-bind:key="link" class="link">
               <div class="icons d-flex col-lg-1 mt-3">
                 <font-awesome-icon
                   :icon="['fa', 'chevron-right']"
                   class="fa-1x "
                 />
                 <div class="icon-content col-lg-3 ">
-                  <b class="white"> {{ link.content }}</b>
+                  <b class="white "> {{ link.content }}</b>
                 </div>
               </div>
             </div>
@@ -49,12 +49,12 @@
       <div class="copyright">
         <div class="row">
           <div class="col-md-4 col-xs-12 mt-3">
-            <p class="copyright-content">
+            <p class="copyright-content lightgrey">
               &copy; Copyright 2019 mobirise - Simple Html Website
             </p>
           </div>
           <div class="col-md-8 col-xs-12 mt-3">
-            <div class="icon-section">
+            <div class="icon-section lightgrey">
               <div class="row">
                 <div class="col-md-2">
                   <font-awesome-icon :icon="['fab', 'facebook']" class="fa-x" />
@@ -139,7 +139,8 @@ export default {
     margin: 0px;
   }
   .footer-img {
-    background-color: $border-bottom-color;
+    background-color: $blue2;
+    padding-bottom: 59px;
   }
   .logo-section {
     padding-top: 5px;
@@ -152,6 +153,13 @@ export default {
   .fa-chevron-right {
     color: $gold;
   }
+
+  .link {
+    border-bottom-style: solid;
+    border-bottom-color: $grey;
+    border-bottom-width: 1px;
+    width: 350px;
+  }
 }
 @media screen and(min-width: 800px) {
   .footer-section {
@@ -160,7 +168,7 @@ export default {
       padding-left: 90px;
     }
     .icon-section {
-      padding-left: 108px;
+      padding-left: 105px;
     }
     .logo-section {
       padding: 56px 0px 0px 146px;

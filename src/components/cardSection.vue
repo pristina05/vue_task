@@ -1,7 +1,8 @@
 <template>
   <div class="cardSection">
-    <div class="container p-5">
+    <div class="container p-3">
       <div class="row">
+        <!-- card-section -->
         <div class="col-md-4" v-for="team in teams" v-bind:key="team">
           <div class="img-section">
             <img :src="team.image" class="image img-fluid" alt="photos" />
@@ -81,7 +82,7 @@ export default {
     right: 152px;
     width: 215px;
     height: 120px;
-    border: 3px solid #73ad21;
+    border: 3px solid $green;
   }
 }
 </style>

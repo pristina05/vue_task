@@ -11,6 +11,11 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 Vue.use(BootstrapVue);
 
+// validation
+import Vuelidate from "vuelidate";
+Vue.use(Vuelidate);
+
+
 // vue-swiper
 import VueAwesomeSwiper from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
