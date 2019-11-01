@@ -5,120 +5,125 @@
         <div class="form-section col-md-6 bg-lightgrey ">
           <div class="container">
             <p class="pt-3">Get in touch</p>
-            <h1 class="page-title">Contact Us</h1>
-
-            <div class="form justify-content-center mt-5">
-              <form
-                class="form-inline needs-validation"
-                action="/action_page.php"
-                novalidate
-              >
-                <div class="form-group ">
-                  <input
+            <h1 class="page-title mb-3">Contact Us</h1>
+            <b-form name="form" novalidate @submit.prevent="submit">
+              <div class="row">
+                <!-- mobile no -->
+                <b-form-group
+                  id="fieldset-1"
+                  description="Let us know your mobile no."
+                  :class="{ 'form-group--error': $v.form.name.$error }"
+                >
+                  <b-form-input
+                    id="mobile"
+                    name="mobile"
                     type="tel"
-                    class="form-control col-md-12"
-                    placeholder="Phone Number"
-                  />
-                </div>
-                <!-- <input type="email" class="form-control " placeholder="Email" />
-                 -->
-                <div
-                  class="form-group"
-                  :class="{ 'form-group--error': $v.email.$error }"
+                    class="col-xs-12"
+                    v-model="form.mobile"
+                    :maxlength="10"
+                    :minlength="10"
+                    pattern="^\d{3}-\d{3}-\d{4}$"
+                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    required
+                  ></b-form-input>
+                  <div
+                    class="error"
+                    v-if="!$v.form.mobile.required && $v.form.mobile.$error"
+                  >
+                    Mobile is required
+                  </div>
+                  <div class="error" v-if="!$v.form.mobile.minLength">
+                    Number should be
+                    {{ $v.form.mobile.$params.minLength.min }} digits.
+                  </div>
+                </b-form-group>
+                <!-- email -->
+                <b-form-group
+                  id="fieldset-2"
+                  description="Let us know your email."
                 >
-                  <input
-                    type="email"
-                    class="form-control col-md-12"
-                    placeholder=" email"
-                    v-model.trim="$v.email.$model"
-                  />
-                </div>
-                <div class="error" v-if="!$v.email.required">
-                  Field is required
-                </div>
-                <br />
-
-                <!-- name -->
-
-                <div
-                  class="form-group"
-                  :class="{ 'form-group--error': $v.name.$error }"
+                  <b-form-input
+                    id="email"
+                    name="email"
+                    class="col-xs-12"
+                    v-model="form.email"
+                    pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$."
+                    required
+                  ></b-form-input>
+                  <div
+                    class="error"
+                    v-if="!$v.form.email.required && $v.form.email.$error"
+                  >
+                    Email is required
+                  </div>
+                </b-form-group>
+              </div>
+              <!--name  -->
+              <div class="row">
+                <b-form-group
+                  id="fieldset-3"
+                  description="Let us know your name."
                 >
-                  <input
-                    class="form-control col-md-12"
-                    placeholder=" name"
-                    v-model.trim="$v.name.$model"
-                  />
-                </div>
-                <div class="error" v-if="!$v.name.required">
-                  Field is required
-                </div>
-                <div class="error" v-if="!$v.name.minLength">
-                  Name must have at least
-                  {{ $v.name.$params.minLength.min }} letters.
-                </div>
-                <tree-view
-                  :data="$v.name"
-                  :options="{ rootObjectKey: '$v.name', maxDepth: 2 }"
-                ></tree-view>
+                  <b-form-input
+                    id="name"
+                    name="name"
+                    class="col-xs-12"
+                    v-model="form.name"
+                    required
+                  ></b-form-input>
+                  <div
+                    class="error-list"
+                    v-if="!$v.form.name.required && $v.form.name.$error"
+                    removeText
+                  >
+                    name is required
+                  </div>
+                </b-form-group>
                 <!-- topic -->
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control col-md-12 "
-                    placeholder="Topic"
-                  /><br />
-                </div>
 
-                <!--  -->
-                <textarea
-                  name="text"
-                  class="mt-2 "
-                  rows="6"
-                  cols="47"
-                  placeholder="message"
+                <b-form-group
+                  id="fieldset-3"
+                  description="Let us know your name."
                 >
-                </textarea>
-
-                <br />
-                <!--  -->
-                <div>
-                  <button type="submit" class="btn btn-danger mt-3 mb-3">
-                    Send
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            <!-- <div>
-              <form @submit.prevent="submit">
-              
-                <div
-                  class="form-group"
-                  :class="{ 'form-group--error': $v.age.$error }"
+                  <b-form-input
+                    id="topics"
+                    name="topics"
+                    class="col-xs-12"
+                    v-model="form.topics"
+                    required
+                  ></b-form-input>
+                  <div
+                    class="error"
+                    v-if="!$v.form.topics.required && $v.form.topics.$error"
+                  >
+                    topic is required
+                  </div>
+                </b-form-group>
+              </div>
+              <!-- textarea -->
+              <div class="row">
+                <b-form-textarea
+                  id="textarea"
+                  name="textarea"
+                  v-model="form.textarea"
+                  required
+                  placeholder="Enter something..."
+                  rows="3"
+                  cols="15"
                 >
-                  <label class="form__label">Age</label>
-                  <input
-                    class="form__input"
-                    v-model.trim.lazy="$v.age.$model"
-                  />
-                </div>
-                <div class="error" v-if="!$v.age.between">
-                  Must be between {{ $v.age.$params.between.min }} and
-                  {{ $v.age.$params.between.max }}
-                </div>
+                </b-form-textarea>
+              </div>
+              <!-- button -->
+              <div class="mt-3">
+                <!-- <b-button type="submit" variant="primary">Submit</b-button> -->
 
-                <tree-view
-                  :data="$v.age"
-                  :options="{ rootObjectKey: '$v.age', maxDepth: 2 }"
-                ></tree-view>
-                <button
-                  class="button"
+                <b-button
+                  class="btn btn-danger"
                   type="submit"
                   :disabled="submitStatus === 'PENDING'"
                 >
                   Submit!
-                </button>
+                </b-button>
                 <p class="typo__p" v-if="submitStatus === 'OK'">
                   Thanks for your submission!
                 </p>
@@ -128,8 +133,8 @@
                 <p class="typo__p" v-if="submitStatus === 'PENDING'">
                   Sending...
                 </p>
-              </form>
-            </div> -->
+              </div>
+            </b-form>
           </div>
         </div>
         <!-- image section -->
@@ -145,44 +150,75 @@
   </div>
 </template>
 <script>
-import {
-  required,
-  minLength,
-  between,
-
-} from "vuelidate/lib/validators";
+import { required, minLength, between } from "vuelidate/lib/validators";
 
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      age: 0
+      form: {
+        name: "",
+        email: "",
+        mobile: "",
+        age: 0,
+        topics: " ",
+        removeText: "true",
+        show: true,
+        errors: [],
+        submitStatus: null
+      }
     };
   },
   validations: {
-    name: {
-      required,
-      minLength: minLength(4)
-    },
-    age: {
-      between: between(20, 30)
-    },
-    email: {
-      required,
-    
+    form: {
+      mobile: {
+        required,
+        minLength: minLength(10)
+      },
+      name: {
+        required,
+        minLength: minLength(4)
+      },
+      age: {
+        between: between(20, 30)
+      },
+      email: {
+        required
+      },
+      topics: {
+        required
+      }
+    }
+  },
+  methods: {
+    submit() {
+      // eslint-disable-next-line no-console
+      console.log("submit!");
+      this.$v.$touch();
+      if (this.$v.$invalid) {
+        this.submitStatus = "ERROR";
+      } else {
+        // do your submit logic here
+        this.submitStatus = "PENDING";
+        setTimeout(() => {
+          this.submitStatus = "OK";
+        }, 500);
+      }
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/main.scss";
+
 .contactUs {
   .row {
     margin: 0px;
   }
   .form-section {
     padding: 30px 61px;
+  }
+  .form-control {
+    width: 98%;
   }
 
   .image {
@@ -201,6 +237,9 @@ export default {
   input[type="phoneno"],
   input[type="email"] {
     border: 1px solid $grey;
+  }
+  .error-txt {
+    color: $red;
   }
 }
 @media screen and (max-width: 800px) {
