@@ -8345,6 +8345,16 @@ uuid@^3.0.1, uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.3.tgz#4568f0216e78760ee1dbf3a4d2cf53e224112866"
   integrity sha512-pW0No1RGHgzlpHJO1nsVrHKpOEIxkGg1xB+v0ZmdNH5OAeAwzAVrCnI2/6Mtx+Uys6iaylxa+D3g4j63IKKjSQ==
 
+v-mask@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/v-mask/-/v-mask-2.0.2.tgz#c6a16e5f4c96b37b67f011333a1014fe9321eccb"
+  integrity sha512-mLJ7rgIpn3XgWpqBWWy09despTO5WvU2kg6AHzLy2Uu+cIKyp1iFx0FHZl71VSCq30Byxm7KTv+WbpZIMdRH4w==
+
+v-toaster@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/v-toaster/-/v-toaster-1.0.3.tgz#2c768cea82a5a9e5324f3e0b02703230ce98146f"
+  integrity sha512-B+yhvuUDiYykh1g4jgAKTRmnrJa4vrc+O1+/A57HSl4rA3R7OX0+8GGz2kr3eZ9YKkpaRlew9zWSjtksVa0+Bg==
+
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
@@ -8453,6 +8463,11 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
+
+vuejs-datepicker@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/vuejs-datepicker/-/vuejs-datepicker-1.6.2.tgz#83c1e8fd4108e7f1d01c061a7e344918f25e47ae"
+  integrity sha512-PkC4vxzFBo7i6FSCUAJfnaWOx6VkKbOqxijSGHHlWxh8FIUKEZVtFychkonVWtK3iwWfhmYtqHcwsmgxefLpLQ==
 
 vuelidate@^0.7.4:
   version "0.7.4"

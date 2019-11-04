@@ -1,157 +1,129 @@
 <template>
   <div>
-    <div class="form justify-content-center mt-5">
-      <form
-        class="form-inline needs-validation"
-        action="/action_page.php"
-        novalidate
-        @submit.prevent="submit"
+    <form @submit.prevent="submit">
+      <!-- <div class="form-group" :class="{ 'form-group--error': $v.name.$error }">
+        <label class="form__label">Name</label>
+        <input class="form__input" v-model.trim="$v.name.$model" />
+      </div>
+      <div class="error" v-if="!$v.name.required">Name is required</div>
+      <div class="error" v-if="!$v.name.minLength">
+        Name must have at least {{ $v.name.$params.minLength.min }} letters.
+      </div> -->
+
+      <b-form-group id="fieldset-3" description="Let us know your username.">
+        <b-form-input
+          id="name"
+          name="name"
+          class="col-xs-12"
+          v-model="form.name"
+          required
+        ></b-form-input>
+        <div
+          class="error-list"
+          v-if="!$v.form.name.required && $v.form.name.$error"
+          removeText
+        >
+          name is required
+        </div>
+        <div class="error-list" v-if="!$v.form.name.minLength">
+          Name should be more than <br />
+          {{ $v.form.name.$params.minLength.min }} chars
+        </div>
+      </b-form-group>
+
+      <button
+        class="button"
+        type="submit"
+        :disabled="submitStatus === 'PENDING'"
       >
-        <div class="row">
-          <!-- tel -->
-          <div class="form-group ">
-            <input
-              id="phoneno"
-              type="tel"
-              class="form-control col-xs-12"
-              placeholder="Phone Number"
-            />
-          </div>
-          <!-- <input type="email" class="form-control " placeholder="Email" />
-                 -->
-
-          <!-- email -->
-          <div
-            class="form-group"
-            :class="{ 'form-group--error': $v.email.$error }"
-          >
-            <input
-              id="email"
-              type="email"
-              class="form-control col-xs-12"
-              placeholder=" email"
-              v-model.trim="$v.email.$model"
-            />
-          </div>
-          <div class="error" v-if="!$v.email.required">
-            Field is required
-          </div>
-          <br />
-        </div>
-
-        <div class="row">
-          <!-- name -->
-          <div
-            class="form-group"
-            :class="{ 'form-group--error': $v.name.$error }"
-          >
-            <input
-              id="name"
-              class="form-control col-xs-12"
-              placeholder=" name"
-              v-model.trim="$v.name.$model"
-            />
-          </div>
-          <div class="error" v-if="!$v.name.required">
-            Field is required
-          </div>
-          <div class="error" v-if="!$v.name.minLength">
-            Name must have at least
-            {{ $v.name.$params.minLength.min }} letters.
-          </div>
-
-          <!-- topic -->
-          <div
-            class="form-group "
-            :class="{ 'form-group--error': $v.topic.$error }"
-          >
-            <input
-              id="topic"
-              class="form-control col-xs-12 "
-              placeholder="Topic"
-              v-model.trim="$v.topic.$model"
-            /><br />
-          </div>
-          <div class="error" v-if="!$v.topic.required">
-            Field is required
-          </div>
-        </div>
-
-        <div class="row">
-          <!--textarea  -->
-          <textarea
-            id="message"
-            name="text"
-            class="mt-2 "
-            rows="6"
-            cols="47"
-            placeholder="message"
-          >
-          </textarea>
-        </div>
-        <br />
-        <!--Submit  -->
-        <div class="row">
-          <!-- <button type="submit" class="btn btn-danger mt-3 mb-3">
-                    Send
-                  </button> -->
-          <button
-            class="button"
-            type="submit"
-            :disabled="submitStatus === 'PENDING'"
-          >
-            Submit!
-          </button>
-          <p class="typo__p" v-if="submitStatus === 'OK'">
-            Thanks for your submission!
-          </p>
-          <p class="typo__p" v-if="submitStatus === 'ERROR'">
-            Please fill the form correctly.
-          </p>
-          <p class="typo__p" v-if="submitStatus === 'PENDING'">
-            Sending...
-          </p>
-        </div>
-      </form>
-    </div>
+        Submit!
+      </button>
+      <p class="typo__p" v-if="submitStatus === 'OK'">
+        Thanks for your submission!
+      </p>
+      <p class="typo__p" v-if="submitStatus === 'ERROR'">
+        Please fill the form correctly.
+      </p>
+      <p class="typo__p" v-if="submitStatus === 'PENDING'">Sending...</p>
+    </form>
   </div>
 </template>
-
 <script>
-import { required, minLength, between } from "vuelidate/lib/validators";
+import { required, minLength } from "vuelidate/lib/validators";
 
 export default {
   data() {
     return {
-      name: "",
-      email: "",
-      age: 0,
-      topic: " ",
-      removeText: "true",
-      show: true,
-      errors: [],
-      submitStatus: null
+      form: {
+        name: "",
+        email: "",
+        // emailRules: [
+        //   v =>
+        //     /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+        //     "E-mail must be valid"
+        // ],
+        // emailRules: value => {
+        //   if (value.length > 0) {
+        //     const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        //     return pattern.test(value) || "Invalid e-mail.";
+        //   }
+        // },
+        mobile: "",
+        age: "",
+        topic: "",
+        removeText: "true",
+        show: true,
+        date: "",
+        errors: [],
+        password: "",
+        repeatPassword: "",
+        selectedGender: "",
+        submitStatus: null
+      }
+      // name: "",
+      // age: 0,
+      // submitStatus: null
     };
   },
   validations: {
-    name: {
-      required,
-      minLength: minLength(4)
-    },
-    age: {
-      between: between(20, 30)
-    },
-    email: {
-      required
-    },
-    topic: {
-      required
+   form: {
+      mobile: {
+        required,
+        minLength: minLength(10)
+      },
+      name: {
+        required,
+        minLength: minLength(4)
+      },
+      age: {
+        required,
+        between: between(20, 30)
+      },
+      email: {
+        required,
+        email
+      },
+      topic: {
+        required
+      },
+      date: {
+        required
+      },
+      password: {
+        required,
+        minLength: minLength(8)
+      },
+      repeatPassword: {
+        required,
+        sameAsPassword: sameAs("password")
+      },
+      selectedGender: {
+        required
+      }
     }
   },
   methods: {
     submit() {
-      // eslint-disable-next-line no-console
-      console.log("submit!");
       this.$v.$touch();
       if (this.$v.$invalid) {
         this.submitStatus = "ERROR";

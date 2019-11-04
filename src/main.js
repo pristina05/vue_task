@@ -15,6 +15,23 @@ Vue.use(BootstrapVue);
 import Vuelidate from "vuelidate";
 Vue.use(Vuelidate);
 
+// v-mask
+import VueMask from "v-mask";
+Vue.use(VueMask);
+
+// vue-toaster
+
+import Toaster from "v-toaster";
+
+// You need a specific loader for CSS files like https://github.com/webpack/css-loader
+import "v-toaster/dist/v-toaster.css";
+
+// optional set default imeout, the default is 10000 (10 seconds).
+Vue.use(Toaster, { timeout: 5000 });
+
+// Date picker
+import Datepicker from "vuejs-datepicker";
+Vue.use(Datepicker);
 
 // vue-swiper
 import VueAwesomeSwiper from "vue-awesome-swiper";
